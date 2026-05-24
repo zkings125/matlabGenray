@@ -33,37 +33,6 @@ result = genray('genray.in', 'WorkDir', '/path/to/case');
 
 See `examples/run_single_ray.m` and `tests/testColdDispersion.m`.
 
-## Publishing to GitHub
-
-Upstream 仍为 `compxco/genray`（`origin`）。个人 fork 与单独 MATLAB 仓库可按下面操作。
-
-### 推送到 fork：`zkings125/genray`
-
-在仓库根目录执行一次（若已存在同名 remote，可先 `git remote remove zkings`）：
-
-```bash
-git remote add zkings https://github.com/zkings125/genray.git
-git fetch zkings
-git push -u zkings master
-```
-
-- 若使用 **HTTPS**，浏览器或凭据管理器会提示登录 GitHub（或配置 [PAT](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token)）。
-- 若使用 **SSH**，将 remote 改为 `git@github.com:zkings125/genray.git` 并确保本机已加载对应密钥。
-
-### 仅 MATLAB 代码：新建仓库 `matlabGenray`
-
-在 **仅包含** `matlab/` 内容的独立仓库中发布（与 Fortran 主仓库历史分离）：
-
-```bash
-cd matlab
-git init
-git add .
-git commit -m "Initial MATLAB GENRAY port scaffold"
-gh repo create matlabGenray --public --source=. --remote=origin --push
-```
-
-将 `matlabGenray` 换成你想要的仓库名；若需建在用户名下：`gh repo create zkings125/matlabGenray --public --source=. --remote=origin --push`。
-
 ## Package layout
 
 ```
